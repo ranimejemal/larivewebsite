@@ -24,7 +24,7 @@ const OpeningAnimation = ({ onComplete }: OpeningAnimationProps) => {
     // Complete animation after 4 seconds
     const completeTimer = setTimeout(() => {
       onComplete();
-    }, 4500);
+    }, 4000);
 
     return () => {
       clearTimeout(cupTimer);
@@ -48,16 +48,18 @@ const OpeningAnimation = ({ onComplete }: OpeningAnimationProps) => {
         </div>
       </div>
 
-      {/* Logo */}
+      {/* Logo - positioned slightly lower, no glow */}
       <div className={`absolute transition-all duration-1000 ease-out ${
-        showLogo ? 'animate-fade-in animate-glow' : 'opacity-0'
+        showLogo ? 'animate-fade-in' : 'opacity-0'
       }`}>
-        <h1 className="font-playfair text-6xl md:text-8xl font-bold text-gold text-center mt-32">
-          La Rive d'Or
-        </h1>
-        <p className="text-beige text-center mt-4 text-lg font-poppins tracking-wider">
-          Where Elegance Meets Aroma
-        </p>
+        <div className="mt-32">
+          <h1 className="font-playfair text-6xl md:text-8xl font-bold text-white text-center">
+            La Rive d'Or
+          </h1>
+          <p className="text-white text-center mt-4 text-lg font-poppins tracking-wider">
+            Where Elegance Meets Aroma
+          </p>
+        </div>
       </div>
     </div>
   );

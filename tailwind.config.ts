@@ -68,8 +68,6 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				marron: 'hsl(30, 45%, 35%)',
-				gold: 'hsl(45, 85%, 60%)',
-				beige: 'hsl(45, 20%, 85%)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -111,14 +109,6 @@ export default {
 						opacity: '1'
 					}
 				},
-				'glow': {
-					'0%, 100%': {
-						boxShadow: '0 0 20px hsl(45, 85%, 60%)'
-					},
-					'50%': {
-						boxShadow: '0 0 40px hsl(45, 85%, 60%)'
-					}
-				},
 				'cup-slide': {
 					'0%': {
 						transform: 'translateY(200px)',
@@ -135,7 +125,6 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'slide-up': 'slide-up 0.8s ease-out',
 				'fade-in': 'fade-in 1s ease-out',
-				'glow': 'glow 2s ease-in-out infinite',
 				'cup-slide': 'cup-slide 2s ease-out'
 			}
 		}
