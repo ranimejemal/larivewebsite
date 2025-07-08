@@ -22,6 +22,15 @@ const HeroSection = () => {
       <div className={`text-center px-6 transition-all duration-1000 ${
         isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-12'
       }`}>
+        {/* Logo */}
+        <div className="mb-8">
+          <img 
+            src="/lovable-uploads/a1d7b4bf-c4c5-4edf-b952-c1678a48c68e.png" 
+            alt="La Rive d'Or Logo" 
+            className="w-24 h-24 md:w-32 md:h-32 mx-auto object-contain"
+          />
+        </div>
+
         <h1 className="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
           Where Elegance<br />
           <span className="text-white">Meets Aroma</span>
