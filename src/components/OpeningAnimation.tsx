@@ -1,24 +1,23 @@
 
 import { useState, useEffect } from 'react';
-import { Coffee } from 'lucide-react';
 
 interface OpeningAnimationProps {
   onComplete: () => void;
 }
 
 const OpeningAnimation = ({ onComplete }: OpeningAnimationProps) => {
-  const [showCup, setShowCup] = useState(false);
   const [showLogo, setShowLogo] = useState(false);
+  const [showText, setShowText] = useState(false);
 
   useEffect(() => {
-    // Show cup after 500ms
-    const cupTimer = setTimeout(() => {
-      setShowCup(true);
-    }, 500);
-
-    // Show logo after 2 seconds
+    // Show logo after 500ms
     const logoTimer = setTimeout(() => {
       setShowLogo(true);
+    }, 500);
+
+    // Show text after 2 seconds
+    const textTimer = setTimeout(() => {
+      setShowText(true);
     }, 2000);
 
     // Complete animation after 4 seconds
@@ -27,32 +26,30 @@ const OpeningAnimation = ({ onComplete }: OpeningAnimationProps) => {
     }, 4000);
 
     return () => {
-      clearTimeout(cupTimer);
       clearTimeout(logoTimer);
+      clearTimeout(textTimer);
       clearTimeout(completeTimer);
     };
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
-      {/* Coffee Cup */}
-      <div className={`absolute transition-all duration-2000 ease-out ${
-        showCup ? 'animate-cup-slide' : 'translate-y-full opacity-0'
+    <div className="fixed inset-0 z-50 bg-black flex items-center justify-center flex-col">
+      {/* Logo Image */}
+      <div className={`transition-all duration-2000 ease-out ${
+        showLogo ? 'animate-cup-slide' : 'translate-y-full opacity-0'
       }`}>
-        <Coffee size={120} className="text-marron" />
-        {/* Steam effect */}
-        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 flex space-x-1">
-          <div className="w-2 h-8 bg-white opacity-30 rounded-full animate-pulse"></div>
-          <div className="w-2 h-6 bg-white opacity-20 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-          <div className="w-2 h-8 bg-white opacity-25 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
-        </div>
+        <img 
+          src="/lovable-uploads/a1d7b4bf-c4c5-4edf-b952-c1678a48c68e.png" 
+          alt="La Rive d'Or Logo" 
+          className="w-32 h-32 md:w-40 md:h-40 object-contain"
+        />
       </div>
 
-      {/* Logo - positioned slightly lower, no glow */}
-      <div className={`absolute transition-all duration-1000 ease-out ${
-        showLogo ? 'animate-fade-in' : 'opacity-0'
+      {/* Text - positioned closer to logo */}
+      <div className={`transition-all duration-1000 ease-out ${
+        showText ? 'animate-fade-in' : 'opacity-0'
       }`}>
-        <div className="mt-32">
+        <div className="mt-6">
           <h1 className="font-playfair text-6xl md:text-8xl font-bold text-white text-center">
             La Rive d'Or
           </h1>
