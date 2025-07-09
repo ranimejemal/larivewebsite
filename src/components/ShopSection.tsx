@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
-const categories = ['All', 'Coffee', 'Croissants', 'Cakes'];
+const categories = ['All', 'Coffee', 'Croissants', 'Snacks'];
 
 const featuredItems = [
   {
@@ -22,17 +22,27 @@ const featuredItems = [
   },
   {
     id: 3,
-    name: 'Chocolate Cake',
-    price: '$32.00',
-    category: 'Cakes',
-    description: 'Rich chocolate cake with premium cocoa'
+    name: 'Cookie',
+    price: '6.00 DT',
+    category: 'Snacks',
+    image: '/lovable-uploads/4512f6b0-4b23-48f7-a09c-0f77fc84c610.png',
+    description: 'Delicious chocolate chip cookie'
   },
   {
     id: 4,
-    name: 'Espresso Collection',
-    price: '$45.99',
-    category: 'Coffee',
-    description: 'Complete espresso experience kit'
+    name: 'Cookie',
+    price: '6.00 DT',
+    category: 'Snacks',
+    image: '/lovable-uploads/f8a32f5b-4790-4f6c-96e2-e68f0f7d1628.png',
+    description: 'Rich red velvet cookie'
+  },
+  {
+    id: 5,
+    name: 'Cookie',
+    price: '6.00 DT',
+    category: 'Snacks',
+    image: '/lovable-uploads/4b2b5c9d-a3a9-4dc9-be48-89e80c7b5180.png',
+    description: 'Classic chocolate chip cookie'
   }
 ];
 
@@ -96,24 +106,44 @@ const ShopSection = () => {
         </div>
 
         {/* Featured Items Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {filteredItems.map((item, index) => (
             <Card key={item.id} className={`bg-black border border-marron/30 hover:border-marron transition-all duration-500 transform hover:scale-105 group ${
               isVisible ? 'animate-slide-up' : 'opacity-0 translate-y-12'
             }`}
             style={{ animationDelay: `${index * 0.1}s` }}>
               <CardContent className="p-6 text-center">
-                <h3 className="font-playfair text-xl font-bold text-white mb-2">
-                  {item.name}
-                </h3>
-                <p className="font-poppins text-white/70 text-sm mb-4">
-                  {item.description}
-                </p>
-                <div className="flex justify-between items-center">
-                  <span className="font-poppins text-white text-xl font-semibold">
+                {item.image ? (
+                  <div className="mb-4">
+                    <img 
+                      src={item.image} 
+                      alt={item.name}
+                      className="w-full h-32 object-cover rounded-lg mx-auto"
+                    />
+                  </div>
+                ) : (
+                  <h3 className="font-playfair text-xl font-bold text-white mb-2">
+                    {item.name}
+                  </h3>
+                )}
+                
+                {item.image && (
+                  <h3 className="font-playfair text-lg font-bold text-white mb-2">
+                    {item.name}
+                  </h3>
+                )}
+                
+                {!item.image && (
+                  <p className="font-poppins text-white/70 text-sm mb-4">
+                    {item.description}
+                  </p>
+                )}
+                
+                <div className="space-y-3">
+                  <div className="font-poppins text-white text-xl font-semibold">
                     {item.price}
-                  </span>
-                  <Button className="bg-marron hover:bg-marron/80 text-white transition-colors">
+                  </div>
+                  <Button className="bg-marron hover:bg-marron/80 text-white transition-colors w-full">
                     Buy Now
                   </Button>
                 </div>
