@@ -1,9 +1,6 @@
-
 import { Instagram, Facebook, Twitter, MapPin, Clock, Phone } from 'lucide-react';
-
 const Footer = () => {
-  return (
-    <footer className="bg-black border-t border-marron/30 py-12">
+  return <footer className="bg-black border-t border-marron/30 py-12">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
@@ -38,11 +35,11 @@ const Footer = () => {
             <div className="space-y-3 font-poppins text-white/80">
               <div className="flex items-center space-x-3">
                 <MapPin size={18} className="text-marron" />
-                <span>123 Golden Avenue, Paris</span>
+                <span>Monastir , Rue kairouan </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="text-marron" />
-                <span>+33 1 23 45 67 89</span>
+                <span>+216 97017061</span>
               </div>
             </div>
           </div>
@@ -55,24 +52,20 @@ const Footer = () => {
             <div className="space-y-2 font-poppins text-white/80">
               <div className="flex items-center space-x-2">
                 <Clock size={16} className="text-marron" />
-                <span className="text-sm">Mon-Fri: 7:00-20:00</span>
+                <span className="text-sm">Mon-Fri: 7:00-22:00</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Clock size={16} className="text-marron" />
-                <span className="text-sm">Sat-Sun: 8:00-21:00</span>
+                <span className="text-sm">Sat-Sun: 7:00-22:00</span>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-marron/30 mt-8 pt-8 text-center">
-          <p className="font-poppins text-white/80 text-sm">
-            © 2024 La Rive d'Or. All rights reserved. Crafted with passion and precision.
-          </p>
+          <p className="font-poppins text-white/80 text-sm">© 2025 La Rive d'Or. All rights reserved. Crafted with passion and precision.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
