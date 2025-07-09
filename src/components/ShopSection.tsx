@@ -3,22 +3,22 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
-const categories = ['All', 'Coffee', 'Croissants', 'Snacks'];
+const categories = ['All', 'Croissants', 'Snacks'];
 
 const featuredItems = [
   {
     id: 1,
-    name: 'Premium Coffee Blend',
-    price: '$24.99',
-    category: 'Coffee',
-    description: 'Our signature blend of premium arabica beans'
+    name: 'Croissant Salé',
+    price: '6.00 DT',
+    category: 'Croissants',
+    image: '/lovable-uploads/2f98c8a8-b02c-4845-bc4b-9feb7ce1c2e0.png'
   },
   {
     id: 2,
-    name: 'Artisan Croissant Box',
-    price: '$18.50',
+    name: 'Croque Monsieur',
+    price: '6.00 DT',
     category: 'Croissants',
-    description: 'Freshly baked croissants, box of 6'
+    image: '/lovable-uploads/3b5cd6d3-d690-4b91-aabe-2f77bb8ea3ea.png'
   },
   {
     id: 3,
@@ -133,7 +133,7 @@ const ShopSection = () => {
                   </h3>
                 )}
                 
-                {!item.image && (
+                {!item.image && item.description && (
                   <p className="font-poppins text-white/70 text-sm mb-4">
                     {item.description}
                   </p>
