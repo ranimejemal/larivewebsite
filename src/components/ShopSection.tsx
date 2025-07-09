@@ -22,7 +22,7 @@ const featuredItems = [
   },
   {
     id: 3,
-    name: 'Cookie',
+    name: 'Brown Cookie',
     price: '6.00 DT',
     category: 'Snacks',
     image: '/lovable-uploads/4512f6b0-4b23-48f7-a09c-0f77fc84c610.png',
