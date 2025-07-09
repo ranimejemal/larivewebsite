@@ -118,7 +118,7 @@ const ShopSection = () => {
                     <img 
                       src={item.image} 
                       alt={item.name}
-                      className="w-full h-32 object-cover rounded-lg mx-auto"
+                      className="w-full h-48 object-cover rounded-lg mx-auto"
                     />
                   </div>
                 ) : (
