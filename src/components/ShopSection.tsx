@@ -30,7 +30,7 @@ const featuredItems = [
   },
   {
     id: 4,
-    name: 'Cookie',
+    name: 'Red Velvet Cookie',
     price: '6.00 DT',
     category: 'Snacks',
     image: '/lovable-uploads/f8a32f5b-4790-4f6c-96e2-e68f0f7d1628.png',
